@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>PigFarm</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    h1 { text-align: center; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+    th { background-color: #f2f2f2; }
+    .no-data { text-align: center; margin-top: 30px; font-style: italic; }
+    .logo { width: 100px; margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <div style="text-align: center;">
+    <img src="data:image/png;base64,{{ logo_b64 }}" width="120">
+
+
+    <h1>Reporte Mensual - PigFarm</h1>
+    <p>Mes: {{ mes }} / {{ anio }}</p>
+    <p>Generado el: {{ fecha_actual.strftime('%d-%m-%Y') }}</p>
+  </div>
+
+  {% if cerdos %}
+    <table>
+      <thead>
+        <tr>
+          <th>Numero Arete</th>
+          <th>Descripción</th>
+          <th>Raza</th>
+          <th>Peso</th>
+          <th>Fecha de Ingreso</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for cerdo in cerdos %}
+          <tr>
+            <td>{{ cerdo.numero_arete }}</td>
+            <td>{{ cerdo.descripcion }}</td>
+            <td>{{ cerdo.raza }}</td>
+            <td>{{ cerdo.peso }}</td>
+            <td>{{ cerdo.fecha_ingreso }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p class="no-data">No hay cerdos ingresados en este mes.</p>
+  {% endif %}
+</body>
+</html>
+

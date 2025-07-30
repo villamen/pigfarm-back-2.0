@@ -1,0 +1,174 @@
+1-crear entorno virtual
+py -3 -m venv .venv
+activarlo
+.venv\Scripts\activate
+
+2-Instalar dependencias necesarias
+pip install flask flask_sqlalchemy flask_bcrypt pyjwt pymysql flask_cors
+pip install cryptography front npm install, npm install sweetalert2
+
+pip install pdfkit
+https://wkhtmltopdf.org/downloads.html
+ojo con la ruta del bin
+npm install axios
+
+
+
+Paso 3: Crear la estructura básica del proyecto
+
+Paso 4: Archivo config.py
+
+Paso 5: models.py — Definir modelos ORM
+
+Paso 6: Crear app.py
+
+Paso 7: Crear auth.py
+Este archivo manejará:
+Registro (/register)
+Login (/login)
+Verificación de token y roles
+
+
+prueba de POST "/register/"
+{
+  "rol": "administrador",
+  "nombre": "Luis Alfredo",
+  "apellido": "Villamizar",
+  "direccion": "villamen19@gmail.com",
+  "telefono": "5832503",
+  "password": "Hero2056"
+}
+
+{
+  "rol": "granjero",
+  "nombre": "Jaider",
+  "apellido": "Torres",
+  "direccion": "jaider20@gmail.com",
+  "telefono": "5832503",
+  "password": "Hero2056"
+}
+
+{
+  "rol": "veterinario",
+  "nombre": "edwin",
+  "apellido": "Guitierrez",
+  "direccion": "edwin20@gmail.com",
+  "telefono": "5832503",
+  "password": "Hero205"
+}
+Paso 8: Crear un decorador para proteger rutas con JWT y rol
+Vamos a crear un archivo llamado auth_utils.py 
+donde pondremos funciones auxiliares:
+
+Paso 9: Crear una ruta protegida como ejemplo
+Vamos a crear un archivo routes.py con rutas protegidas, por ejemplo
+ /usuarios solo visible por administrador.
+
+Paso 10: Registrar routes_bp en app.py
+
+entre estos dos pasos se prueban los jwt generando tokens
+POST a /login
+{
+  "direccion": "villamen19@gmail.com",
+  "password": "Hero2056"
+}
+
+
+{
+  "direccion": "jaider20@gmail.com",
+  "password": "Hero2056"
+}
+{
+ 
+  "direccion": "edwin20@gmail.com",
+  "password": "Hero2056"
+}
+
+
+
+Paso siguiente: Crear rutas CRUD para tus modelos 
+(cerdo, vacuna, aplicacion_vacuna) con control de acceso por rol (ya funciona)
+
+hasta ahora se puede registrar administradores y solo granjeros y 
+veterinarios si eres administrador debo probar si funciona agregar cerdos
+funcionar def listar_cerdos(): en routes.py (ya funciona)
+
+probar el CRUD de aplicacion vacuna para la proxima(ya funciona)
+
+IMPORTANT instalar pip install cryptography
+
+continuar con la auditoria y verificar quien crea las vacuna s y quien las modifica
+(ya funciona)
+
+Agregar campos de auditoría a AplicaciónVacuna
+(ya funciona)
+
+3. Autorizaciones y validaciones adicionales
+Por ejemplo:
+
+Validar que un cerdo existe antes de aplicarle una vacuna.
+Rechazar duplicados de vacuna al mismo cerdo en la misma fecha.
+no se permite es aplicar la misma vacuna al mismo cerdo en la misma fecha 
+(eso es lo que estamos evitando con la validación de duplicados).
+(ya funciona)
+importante para colocar en el documento
+Seguridad con JWT y control de roles (administrador, granjero, veterinario).
+
+5. Crear un frontend o conectarte con uno
+Ya que tienes una API JSON funcional y protegida con JWT, podrías:
+
+npm create vite@latest pigfarm-frontend -- --template svelte
+
+cd pigfarm-frontend
+npm install
+npm run dev
+
+Crear estructura de rutas
+Instalaremos un sistema de rutas sencillo para navegar entre páginas. Vamos a usar Svelte Navigator, que es fácil y ligero.
+
+Instálalo con:
+
+npm install svelte-navigator
+
+Usar Postman o Insomnia mientras pruebas
+
+{
+  "raza": "Criollito",
+  "descripcion": "Cerdo joven sin vacunas",
+  "fecha_ingreso": "2025-01-10",
+  "disponible": true,
+  "edad": 5,
+  "peso": 78.3
+}
+
+{
+  "numero_arete": "2025-346",
+  "raza": "Large White",
+  "descripcion": "Cerdo para engorde rápido",
+  "fecha_ingreso": "2025-01-15",
+  "fecha_salida": null,
+  "disponible": true,
+  "edad": 6,
+  "peso": 85.3
+  
+}
+
+{
+  "id_cerdo": 1,
+  "id_vacuna": 2,
+  "fecha_aplicacion": "2025-06-30",
+  "descripcion": "Primera dosis de vacuna contra la fiebre porcina"
+}
+
+
+
+{
+  "rol": "administrador",
+  "nombre": "Maria",
+  "apellido": "Mendoza",
+  "direccion": "admin@gamil.com",
+  "telefono": "3111234567",
+  "password": "Clave123"
+}
+
+
