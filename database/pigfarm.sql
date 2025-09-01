@@ -57,7 +57,7 @@ CREATE TABLE vacuna (
     id_vacuna INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(100) NOT NULL,
     descripcion VARCHAR(255),
-    fecha_vencimiento DATE NOT NULL,
+    fecha_vencimiento DATE  NULL,
     id_admin INT,
     id_granjero INT,
     id_veterinario INT,

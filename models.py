@@ -126,7 +126,7 @@ class Vacuna(db.Model):
     id_vacuna = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(100), nullable=False)
     descripcion = db.Column(db.String(255))
-    fecha_vencimiento = db.Column(db.Date, nullable=False)
+    fecha_vencimiento = db.Column(db.Date, nullable=True)
 
     id_admin = db.Column(db.Integer, db.ForeignKey('administrador.id'), nullable=True)
     id_granjero = db.Column(db.Integer, db.ForeignKey('granjero.id_granjero'), nullable=True)

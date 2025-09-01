@@ -1,0 +1,136 @@
+todos los navegadores tienen un motor de navegador v8 por ejemplo
+
+metodos de seleccion
+
+queryselector()
+
+getelementby.....
+
+
+cambiar estilos de los elementos con los metodos de seleccion
+
+queryselector("p#weather").style.color = "red";
+
+agregar o eliminar clases de los elementos
+
+queryselector(".nombre_clase").classList.remove("redbg")
+queryselector("#nombre_id").classList.add("redbg")
+
+hace ambos dependiendo si la clase ya existe o no
+queryselector("p#weather").classList.toggle("redbg")
+
+eventos
+document.querySelector("#open-nav-menu").addEventListener("click", function(){
+  alert("holaaaaa")
+});
+
+este metodo selecciona un grupo con la misma clase o id, se necesita un ciclo para iterarlos
+const nodeList = document.querySelectorAll(".example");
+for (let i = 0; i < nodeList.length; i++) {
+  nodeList[i].style.backgroundColor = "black";
+  nodeList[i].style.color = "white";
+}
+
+javascript es utilizado la mayoria de veces para cambiar contenido de elementos 
+y manipular su css
+ var cuando quieres que sea global- let local
+
+verificar tipo de variable:
+ typeof nombrevariable
+
+tipos de datos string
+conocer el longitud length
+
+metodos para manipular caracteres
+slice
+replace
+.toUpperCase()
+.toLowerCase()
+.includes() verifica si existe un caracter on grupo de estos devolviendo un booleano
+.split()
+
+//agrega texto a una etiqueta 
+textContent
+
+var no es necesariamente global: su ámbito es de función, pero si la declaras fuera de una función, 
+sí se vuelve global, ademas de que usaqndo var puedes crear mas de una variable con el mismo nombre LOL
+
+Hoy en día, let y const son más recomendados.
+
+****************************
+javascript no diferencia entre varios tipos de numero, float, int etc. aqui todo es numero.
+
+tofixed
+math round, ceil, floor  parsefloat, toString
+arrays, push, length, unshift, concat
+
+array es tipo object pero funciona de manera diferente a un object.
+crear un object
+ carro = {marca: "mazda", modelo:2026}
+agregar un nuevo atributo o actualizar un uevo atributo
+carro.velocidadMaxima = 95;
+los arrays on muy utilizados para  almacenar objetos
+operadores de comparacion
+undefined, null toString(), String(10)
+************************  ************************
+funciones
+function(e)
+setTimeout(() => console.log("Tiempo cumplido"), 3000);
+
+setInterval(() => console.log("contando..."), 2000);
+
+condicionales, condicionales con eventos
+fechas, calcular diferencia de fechas, w3schools, obtener minutos, segundos, horas...
+setTimeout, setInterval
+padStart()
+function myTimer() {
+  const date = new Date();
+  document.getElementById("demo").innerHTML = date.toLocaleTimeString();
+}
+
+No, Java no tiene el concepto de Hoisting de la misma manera que lo hace JavaScript. 
+El Hoisting es una característica de JavaScript que mueve las declaraciones de variables y funciones 
+al principio de su ámbito antes de la ejecución del código, un comportamiento que no se observa en Java, 
+donde las declaraciones y asignaciones deben estar presentes antes de ser usadas
+
+Un callback es una función que se pasa como argumento a otra función y que se ejecuta después de que esa
+ función termina su trabajo.
+ 
+ 
+ **************************************
+ bucles for y for in, foreach, practicar iteraciones 
+Usa for clásico si necesitas control absoluto.
+Usa for...in para objetos.
+for...in
+Recorre propiedades enumerables de un objeto.
+Ideal para objetos literales ({}) o para inspeccionar las claves de algo.
+
+Usa forEach para arrays de forma más “limpia” y legible. no puedes usar break ni continue, no puedes iterar objetos
+directamente, tienes que usar metodos extra
+
+ let padre_imagenes = document.querySelector("#gallery .thumbnails");
+
+for...of
+Itera directamente sobre los valores de estructuras iterables: arrays, strings, Maps, Sets, NodeLists, etc.
+Más legible y seguro para recorrer arrays, es mas comun usarlo en backend
+
+
+imagenes.forEach(function(img, inde){
+   let gal= document.createElement("img");
+  gal.src = img.src;
+  gal.alt = img.alt;
+  gal.dataset.arrayIndex = inde;
+  gal.dataset.selected = "false";
+  padre_imagenes.appendChild(gal)
+})
+
+
+
+
+
+
+
+
+
+
+

@@ -43,7 +43,7 @@ prueba de POST "/register/"
   "rol": "granjero",
   "nombre": "Jaider",
   "apellido": "Torres",
-  "direccion": "jaider20@gmail.com",
+  "direccion": "jaider19@gmail.com",
   "telefono": "5832503",
   "password": "Hero2056"
 }
