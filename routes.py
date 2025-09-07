@@ -151,7 +151,7 @@ def obtener_cerdo_por_id(id):
 
 
 @routes_bp.route("/cerdos", methods=["GET"])
-@token_requerido(roles_permitidos=["administrador", "granjero", "veterinario"])
+#@token_requerido(roles_permitidos=["administrador", "granjero", "veterinario"])
 def listar_cerdos():
     cerdos = Cerdo.query.all()
     resultado = []
